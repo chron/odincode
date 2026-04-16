@@ -1,0 +1,25 @@
+{
+  "name": "odincode",
+  "version": "1.0.0",
+  "description": "ODINCODE — a pi coding agent persona. Senior software engineer & architect with a focus on code quality, consistency, and robustness.",
+  "keywords": ["pi-package", "pi-extension", "pi-theme", "odincode", "coding-agent"],
+  "type": "module",
+  "license": "MIT",
+  "author": "Paul",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paul/odincode"
+  },
+  "bin": {
+    "odincode": "./bin/odincode.js"
+  },
+  "pi": {
+    "extensions": ["./extensions"],
+    "themes": ["./themes"]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*",
+    "@sinclair/typebox": "*"
+  }
+}
