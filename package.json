@@ -8,7 +8,7 @@
   "author": "Paul",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paul/odincode"
+    "url": "https://github.com/chron/odincode"
   },
   "bin": {
     "odincode": "./bin/odincode.js"

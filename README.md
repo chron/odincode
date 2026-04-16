@@ -18,7 +18,7 @@ A [pi](https://github.com/badlogic/pi-mono) persona package that rebrands the co
 ### As a pi package (recommended)
 
 ```bash
-pi install git:github.com/paul/odincode
+pi install git:github.com/chron/odincode
 ```
 
 This adds the extension, theme, and personality to your existing `pi` setup. Select the `odincode` theme via `/settings`.
@@ -43,7 +43,7 @@ Add to your project's `.pi/settings.json`:
 
 ```json
 {
-  "packages": ["git:github.com/paul/odincode"],
+  "packages": ["git:github.com/chron/odincode"],
   "theme": "odincode"
 }
 ```
