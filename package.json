@@ -11,7 +11,7 @@
     "url": "https://github.com/chron/odincode"
   },
   "bin": {
-    "odincode": "./bin/odincode.js"
+    "odincode": "./bin/odincode"
   },
   "pi": {
     "extensions": ["./extensions"],

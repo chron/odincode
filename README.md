@@ -15,6 +15,8 @@ A [pi](https://github.com/badlogic/pi-mono) persona package that rebrands the co
 
 ## Install
 
+Requires [pi](https://github.com/badlogic/pi-mono) to be installed first.
+
 ### As a pi package (recommended)
 
 ```bash
@@ -23,10 +25,12 @@ pi install git:github.com/chron/odincode
 
 This adds the extension, theme, and personality to your existing `pi` setup. Select the `odincode` theme via `/settings`.
 
-### As a standalone CLI
+### The `odincode` CLI command
+
+To also get a standalone `odincode` command that wraps `pi` with everything pre-loaded:
 
 ```bash
-npm install -g odincode
+npm install -g git+https://github.com/chron/odincode.git
 ```
 
 Then run:
@@ -35,7 +39,7 @@ Then run:
 odincode
 ```
 
-This wraps `pi` with the ODINCODE extension and theme pre-loaded. All `pi` flags and arguments work as normal.
+All `pi` flags and arguments are passed through.
 
 ### Project-local
 

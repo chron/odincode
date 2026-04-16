@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# ODINCODE CLI — wraps pi with the odincode extension and theme pre-loaded.
+# Requires pi to be installed: npm install -g @mariozechner/pi-coding-agent
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PACKAGE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+exec pi \
+  -e "$PACKAGE_DIR/extensions/odincode.ts" \
+  --theme "$PACKAGE_DIR/themes/odincode.json" \
+  "$@"
