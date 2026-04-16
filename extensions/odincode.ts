@@ -70,15 +70,31 @@ function composeHeader(banner: string[], face: string[], gap: number): string[] 
   for (let i = 0; i < maxLines; i++) {
     const left  = i < banner.length ? banner[i] : "";
     const right = i < face.length   ? face[i]   : "";
-    const pad   = Math.max(0, bannerWidth - stripAnsi(left).length);
+    const pad   = Math.max(0, bannerWidth - visibleWidth(left));
     result.push(left + " ".repeat(pad) + " ".repeat(gap) + right);
   }
   return result;
 }
 
-/** Strip ANSI escape sequences for width calculations */
-function stripAnsi(s: string): string {
-  return s.replace(/\x1b\[[0-9;]*m/g, "");
+/** Calculate visible terminal width, accounting for ANSI escapes and double-width chars */
+function visibleWidth(s: string): number {
+  const stripped = s.replace(/\x1b\[[0-9;]*m/g, "");
+  let width = 0;
+  for (const char of stripped) {
+    const code = char.codePointAt(0) ?? 0;
+    // Emoji and other double-width characters (rough heuristic)
+    if (
+      code > 0x1000 ||
+      (code >= 0x2600 && code <= 0x27bf) || // misc symbols + dingbats
+      (code >= 0xfe00 && code <= 0xfe0f) || // variation selectors
+      (code >= 0x1f000)
+    ) {
+      width += 2;
+    } else {
+      width += 1;
+    }
+  }
+  return width;
 }
 
 // ── Odin's personality prompt ───────────────────────────────────────────────
